@@ -1,0 +1,5 @@
+rootProject.name = projectName
+
+
+include 'libhtmlexport'
+project(':libhtmlexport').projectDir = new File('../lib-html-exporter')

@@ -1,0 +1,68 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'maven'
+    id 'com.enonic.xp.app' version '1.0.13'
+    id 'jacoco'
+    id "com.jfrog.bintray" version "1.7.3"
+}
+
+//apply plugin: 'com.enonic.xp.app'
+
+dependencies {
+    include "com.enonic.xp:lib-io:${xpVersion}"
+    include 'com.enonic.lib:text-encoding:1.1.0'
+    include 'com.enonic.lib:lib-cache:1.+'
+
+    include "org.jsoup:jsoup:1.11.2"
+    include "commons-io:commons-io:2.1"
+    include "commons-beanutils:commons-beanutils:1.8.3"
+    include "commons-lang:commons-lang:2.6"
+    include "commons-collections:commons-collections:3.2.2"
+    include "org.apache.velocity:velocity:1.7"
+    include "org.xhtmlrenderer:flying-saucer-pdf:9.0.4"
+    include "org.apache.odftoolkit:simple-odf:0.7-incubating"
+
+    include ("org.apache.poi:poi:3.9"){
+        exclude module: "stax-api"
+    }
+    include ("org.apache.poi:poi-ooxml:3.9"){
+        exclude module: "stax-api"
+    }
+
+    compile "com.google.guava:guava:18.0"
+
+    testCompile 'junit:junit:4.12'
+    testCompile "com.enonic.xp:testing:${xpVersion}"
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    xp.enonicRepo()
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+
+bintray {
+    user = "$bintrayUser"
+    key = "$bintrayApiKey"
+    publish = true
+    pkg {
+        repo = 'public'
+        name = project.appName
+        userOrg = 'openxp'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/rbrastad/lib-html-exporter'
+        version {
+            name = project.version
+            released = new Date()
+            configurations = ['archives']
+        }
+    }
+}
