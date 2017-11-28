@@ -2,12 +2,12 @@ plugins {
     id 'java'
     id 'idea'
     id 'maven'
-   // id 'com.enonic.xp.app' version '1.0.13'
+    id 'com.enonic.xp.app' version '1.0.13'
     id 'jacoco'
     id "com.jfrog.bintray" version "1.7.3"
 }
 
-apply plugin: 'com.enonic.xp.app'
+//apply plugin: 'com.enonic.xp.app'
 
 dependencies {
     include "com.enonic.xp:lib-io:${xpVersion}"
