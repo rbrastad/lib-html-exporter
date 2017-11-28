@@ -2,6 +2,8 @@ var mustacheLib = require('/lib/xp/mustache');
 var router = require('/lib/router')();
 var helper = require('/lib/helper');
 var siteTitle = 'HTML Exporter';
+var ioLib = require("/lib/xp/io");
+
 
 var renderPage = function(pageName) {
     return function() {
@@ -22,7 +24,7 @@ router.get('/', function (req) {
             baseUrl: helper.getBaseUrl(),
             precacheUrl: helper.getBaseUrl() + '/precache',
             themeColor: '#FFF',
-            isLive: (req.mode == 'live')
+            tableTestHtml : getHtml()
         })
     }
 });
@@ -36,6 +38,11 @@ exports.get = function (req) {
     return router.dispatch(req);
 };
 
+
+
+function getHtml(){
+    return ioLib.readText(ioLib.getResource(resolve('/controller/htmlexport/html-exporter-test.html')).getStream());
+}
 
 
 

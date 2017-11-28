@@ -10,10 +10,10 @@ var fileOds = "build/tmp/html-exporter-test.ods";
 
 
 exports.test = function() {
-   htmlToExcelTest();
-   htmlToExcelFileTest();
-   htmlToPDFTest();
-   htmlToPDFFileTest();
+   // htmlToExcelTest();
+   // htmlToExcelFileTest();
+   // htmlToPDFTest();
+   // htmlToPDFFileTest();
 
   // htmlToODSTest();
   // htmlToODSFileTest();

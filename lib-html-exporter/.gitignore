@@ -92,3 +92,10 @@ local.properties
 
 # Enonic XP
 .xp
+
+.idea
+.vscode
+.classpath
+.project
+.settings
+bin/

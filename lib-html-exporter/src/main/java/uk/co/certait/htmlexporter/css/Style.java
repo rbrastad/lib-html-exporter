@@ -176,4 +176,8 @@ public class Style {
 		return new HashCodeBuilder(17, 37).append(integerProperties).append(stringProperties).append(colorProperties)
 				.toHashCode();
 	}
+
+    public boolean isTextTransformSet() {
+		return stringProperties.containsKey(CssStringProperty.TEXT_TRANSFORM);
+    }
 }

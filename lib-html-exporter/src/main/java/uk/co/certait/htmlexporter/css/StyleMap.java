@@ -78,6 +78,8 @@ public class StyleMap {
 				String qualifiedClassName = CLASS_PREFIX + className.trim();
 
 				if (styles.containsKey(qualifiedClassName)) {
+					Style s = styles.get(qualifiedClassName);
+
 					classStyles.add(styles.get(qualifiedClassName));
 				}
 			}

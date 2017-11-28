@@ -56,11 +56,27 @@ public class ExcelStyleGenerator {
 			applyHorizontalAlignment(style, cellStyle);
 			applyverticalAlignment(style, cellStyle);
 			applyWidth(cell, style);
+			applyHeight(cell, style);
+			applyTextTransform(style, cellStyle);
 
 			styles.put(style, cellStyle);
 		}
 
 		return cellStyle;
+	}
+
+
+	protected void applyTextTransform(Style style, XSSFCellStyle cellStyle){
+		if (style.isTextTransformSet()) {
+			String property = style.getProperty(CssStringProperty.TEXT_TRANSFORM);
+			if( property.contains("rotate") ){
+				String rotate = property.replace("rotate(", "")
+						.replace(")","")
+						.replace("deg","");
+
+				cellStyle.setRotation((short) Double.valueOf( rotate ).intValue() );
+			}
+		}
 	}
 
 	protected void applyBackground(Style style, XSSFCellStyle cellStyle) {
@@ -117,6 +133,12 @@ public class ExcelStyleGenerator {
 			cellStyle.setVerticalAlignment(VerticalAlignment.BOTTOM);
 		} else if (style.isVerticallyAlignedMiddle()) {
 			cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+		}
+	}
+
+	protected void applyHeight(Cell cell, Style style) {
+		if (style.getProperty(CssIntegerProperty.HEIGHT) > 0) {
+			cell.getRow().setHeight((short) (style.getProperty(CssIntegerProperty.HEIGHT) * 50) );
 		}
 	}
 

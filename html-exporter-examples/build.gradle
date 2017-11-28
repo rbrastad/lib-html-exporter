@@ -30,9 +30,9 @@ dependencies {
 
     include 'openxp.lib:filesystem:0.9.5'
 
-    include 'openxp.lib:htmlexporter:0.1.0'
+//    include 'openxp.lib:htmlexporter:0.1.0'
 
-//    include project(':libhtmlexport')
+    include project(':libhtmlexport')
 
     //include "com.enonic.xp:lib-mustache:${xpVersion}"
     //include "com.enonic.xp:lib-i18n:${xpVersion}"

@@ -20,6 +20,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.jsoup.nodes.Element;
@@ -81,6 +82,7 @@ public class ExcelTableCellWriter extends AbstractTableCellWriter {
 		if (definesFreezePane(element)) {
 			sheet.createFreezePane(columnIndex, rowIndex);
 		}
+
 	}
 
 	public void addFunctionCell(int rowIndex, int columnIndex, CellRange range, Function function) {
