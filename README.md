@@ -31,7 +31,7 @@ To install this library you need to update your build.gradle file.
 ## Examples and feature application
 
 An example application is created to see how html can be converted to Excel and PDF. 
-download url: <https://github.com/rbrastad/data-pull/blob/master/build/DataPullExamples.jar?raw=true>
+download url: <https://github.com/rbrastad/lib-html-exporter/raw/master/html-exporter-examples/build/libs/html_export_examples-1.0.0.jar>
 
 Install and access the application on URL: SERVER_HOSTNAME/app/openxp.app.html.exporter.examples
 
