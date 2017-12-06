@@ -104,6 +104,10 @@ Example:
 
 ## Screenshots
 
+### HTML Exporter Examples APP
+
+![](docs/screenshots/htmlExporterHTML.png)
+
 ### Excel
 
 ![](docs/screenshots/htmlExporterExcel.png)
