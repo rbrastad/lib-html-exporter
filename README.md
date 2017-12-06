@@ -101,3 +101,13 @@ Example:
         The cell is then itself added to another range which will be used by a further function.
     -->
     <td class="subTotal numeric" data-group-output="region_1_1_pg_6_count" data-group="area_1_pg_6_cou
+
+## Screenshots
+
+### Excel
+
+![](docs/screenshots/htmlExporterExcel.png)
+
+### PDF 
+
+![](docs/screenshots/htmlExporterPdf.png)
