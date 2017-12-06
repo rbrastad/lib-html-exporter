@@ -1,6 +1,6 @@
 # lib-html-exporter
 
-An Enonic XP library to Export CSS styled HTML to Excel and PDF
+An Enonic XP library with Export CSS styled HTML to Excel and PDF.
 
 The library is built on top of https://github.com/alanhay/html-exporter with some modifications.
 
