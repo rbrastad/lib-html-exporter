@@ -1,4 +1,4 @@
-# lib-html-exporter
+# HTML Export library
 
 An Enonic XP library to export HTML to Excel and PDF.
 
