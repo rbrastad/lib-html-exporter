@@ -2,10 +2,10 @@ plugins {
     id 'java'
     id 'idea'
     id 'maven'
-    id 'com.enonic.xp.app' version '1.0.13'
+    id 'com.enonic.xp.app' version '1.0.15'
 }
 
-//apply plugin: 'com.enonic.xp.app'
+apply plugin: 'com.enonic.xp.app'
 
 xp {
   version = xpVersion
@@ -16,6 +16,7 @@ app {
     displayName = project.ext.displayName
     vendorName = 'rbrastad'
     vendorUrl = 'https://bitbucket.org/openxp/lib-html-exporter'
+    systemVersion = "${xpVersion}"
 }
 
 dependencies {
@@ -37,4 +38,10 @@ repositories {
     mavenLocal()
     jcenter()
     xp.enonicRepo()
+
+    repositories {
+        maven {
+          url 'https://dl.bintray.com/openxp/public'
+        }
+    }
 }
