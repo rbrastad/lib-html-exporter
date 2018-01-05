@@ -10,23 +10,16 @@ To install this library you need to update your build.gradle file.
 
 # Gradle build script
 
-## Enonic XP version >6.12
-
-    dependencies {
-        include 'openxp.lib:htmlexporter:1.0.0'
-    }
-
-## Enonic XP version <=6.11
-
     repositories {
         maven {
-          url 'https://dl.bintray.com/openxp/enonic'
+          url 'https://dl.bintray.com/openxp/public'
         }
     }
 
     dependencies {
          include 'openxp.lib:htmlexporter:1.0.0'
     }
+
 
 ## Examples and feature application
 
